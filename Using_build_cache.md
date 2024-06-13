@@ -38,5 +38,5 @@ ac_add_options --with-ccache=buildcache
 
 In case cache needs to be purged:
 ```sh
-buildcache -d /home/USER?buildcache_XXX -C
+buildcache -d /home/USER/buildcache_XXX -C
 ```
