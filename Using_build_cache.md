@@ -3,15 +3,16 @@
 ```sh
 cd $HOME
 git clone https://gitlab.com/bits-n-bites/buildcache.git
-mkdir buildcache && cd buildcache
+cd buildcache
+mkdir build && cd build
 cmake -DCMAKE_BUILD_TYPE=Release ../src
 cmake --build . --config Release
 ```
 
-Add to `$PATH` in .zshrc:
+Add to `$PATH` in .zshenv:
 
 ```sh
-export PATH=$HOME/buildcache/build/:$PATH;
+export PATH=/home/USER/buildcache/build/:$PATH;
 ```
 
 Create `.buildcache_XXX` directories for each build config.
@@ -38,5 +39,5 @@ ac_add_options --with-ccache=buildcache
 
 In case cache needs to be purged:
 ```sh
-buildcache -d /home/USER/buildcache_XXX -C
+buildcache -d /home/USER/.buildcache_XXX -C
 ```
